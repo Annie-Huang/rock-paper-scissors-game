@@ -18,8 +18,9 @@ function play(e) {
     // console.log(playerChoice, computerChoice);
 
     const winner = getWinner(playerChoice, computerChoice);
-    console.log(playerChoice, computerChoice, winner);
+    // console.log(playerChoice, computerChoice, winner);
 
+    showWinner(winner, computerChoice);
 }
 
 // Get computers choice
@@ -57,6 +58,42 @@ function getWinner(p, c) {
             return 'player';
         }
     }
+}
+
+function showWinner(winner, computerChoice) {
+    if(winner === 'player') {
+        // Inc player score
+        scoreboard.player++;
+        // Show modal result
+        result.innerHTML = `
+            <h1 class="text-win">You Win</h1>
+            <i class="fas fa-hand-${computerChoice} fa-10x"></i>
+            <p>Computer chose <strong>${computerChoice}</strong></p>
+        `;
+    } else if(winner === 'computer') {
+        // Inc computer score
+        scoreboard.computer++;
+        // Show modal result
+        result.innerHTML = `
+            <h1 class="text-lose">You Lose</h1>
+            <i class="fas fa-hand-${computerChoice} fa-10x"></i>
+            <p>Computer chose <strong>${computerChoice}</strong></p>
+        `;
+    } else {
+        result.innerHTML = `
+            <h1>It's A Draw</h1>
+            <i class="fas fa-hand-${computerChoice} fa-10x"></i>
+            <p>Computer chose <strong>${computerChoice}</strong></p>
+        `;
+    }
+
+    // Show score
+    score.innerHTML = `
+        <p>Player: ${scoreboard.player}</p>
+        <p>Computer: ${scoreboard.computer}</p>
+    `;
+
+    modal.style.display = 'block';
 }
 
 // Event listeners
