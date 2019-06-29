@@ -96,5 +96,13 @@ function showWinner(winner, computerChoice) {
     modal.style.display = 'block';
 }
 
+// Clear modal
+function clearModal(e) {
+    if (e.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
 // Event listeners
 choices.forEach(choice => choice.addEventListener('click', play));
+window.addEventListener('click', clearModal);
