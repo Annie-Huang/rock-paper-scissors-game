@@ -31,7 +31,7 @@ body {
 }
 
 .restart-btn {
-    display: inline-block;
+    display: none;
     background: var(--light-color);
     color: #333;
     padding: 0.4rem 1.3rem;
@@ -44,4 +44,56 @@ body {
 .restart-btn:hover {
     background: var(--primary-color);
     color: #fff;
+}
+
+.header {
+    text-align: center; /* The parent is already have this.. */
+    margin: 1rem 0;
+}
+
+.header h1 {
+    margin-bottom: 1rem;
+}
+
+.score {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.score p:first-child {
+    background: var(--primary-color);
+}
+
+.score p:last-child {
+    background: var(--dark-color);
+}
+
+.choices {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-top: 3rem;
+    text-align: center; /* The parent is already have this.. */
+}
+
+.choice {
+    cursor: pointer;
+}
+
+.choice:hover {
+    color: var(--primary-color);
+}
+
+@media(max-width: 700px) {
+    .choice {
+        font-size: 110px;
+    }
+}
+
+@media(max-width: 500px) {
+    .choice {
+        font-size: 80px;
+    }
 }
