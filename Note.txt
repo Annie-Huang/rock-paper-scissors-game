@@ -1,4 +1,5 @@
 https://www.youtube.com/watch?v=WR_pWXJZiRY
 https://github.com/Annie-Huang/rock-paper-scissors-game
+https://codepen.io/bradtraversy/pen/wLgPzr
 
-
+https://fontawesome.com/
